@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript onSubmit Event Example</title>
+</head>
+<body>
+    <form id="form">
+        <label for="username">Firstname : </label>
+        <input type="text" name="" id="Firstname" placeholder="Enter the Firstname">
+        <br>
+        <label for="username">Lastname : </label>
+        <input type="text" name="" id="Lastname" placeholder="Enter the Lastname">
+        <br>
+        <label for="password">Password : </label>
+        <input type="password" name="" id="password" placeholder="Enter the Password">
+        <br>
+        <button>Submit</button>
+ 
+        <div id="result"></div>
+    </form>
+</body>
+<script>
+    let form = document.getElementById('form')
+ 
+    form.addEventListener('submit',(e) => {
+ 
+        e.preventDefault()
+ 
+        let Firstname = document.getElementById('Firstname').value
+        let Lastname = document.getElementById('Lastname').value
+        let password = document.getElementById('password').value
+ 
+        if(Firstname == "" || Lastname=="" ||password == ""){
+            alert("Please enter all the fields")
+        }
+        else{
+            document.getElementById('result').innerHTML = `
+            <p>The Firstname is: ${Firstname}</p>
+            <p>The Lastname is: ${Lastname}</p>
+            <p>The Password is: ${password}</p>
+            `
+        }
+        
+    })
+    </script>
+</html>
+ 
